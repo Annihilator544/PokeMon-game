@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'Vouge';
+    src: url("../fonts/Vouge.otf") format("opentype");
+}
+h1{
+    font-family: 'Pokemon';
+    font-size: 50px;
+    text-align: center;
+    font-weight: 10;
+    color: aliceblue;
+    margin: 0;
+}
+h4{
+    font-family: 'Pokemon';
+    font-size: 20px;
+    text-align: center;
+    color: aliceblue;
+    font-weight: 10;
+    margin: 0;
+}
+header{
+    display: flex;
+    flex-wrap: wrap;
+}
+header img{
+    width: 200px;
+    height: 100%;
+}
+.hh{
+    flex:1;
+}
+.h{
+    padding: 10px;
+}
