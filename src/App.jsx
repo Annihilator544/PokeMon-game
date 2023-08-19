@@ -23,14 +23,13 @@ function App() {
   const [arr,setarr] = useState([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
   const [score,setscore] = useState(1);
   const [highscore,sethighscore] = useState(0);
-  
   function handle(id){
     const newarr = arr;
     newarr[id-1]++;
     if(newarr[id-1]===2){
       alert("Game Over");
       let scores = document.getElementById('score');
-      scores.innerHTML = "Score: 0";
+      scores.innerHTML = "Score: 1";
       let p=1;
       setscore(p);
       if(score>highscore){
@@ -47,15 +46,34 @@ function App() {
     setscore(score+1);
     }
     if(score>=16){
-      alert("You Win");
+      alert("Contact me for a treat :) ");
       let p=1;
       setscore(p);
     }
     let scores = document.getElementById('score');
     let highscores = document.getElementById('highscore');
-    scores.innerHTML = "Score: "+score;
+    scores.innerHTML = "Score: "+(score);
     highscores.innerHTML = "High Score: "+highscore;
+    let data=document.getElementsByClassName("pokemonGrid")[0];
+    console.log(data);
+    let arr2 = [];
+    for(let i=0;i<16;i++){
+      arr2.push(document.getElementById(i+1));
+    }
+    shuffleArray(arr2);
+    data.innerHTML="";
+    for(let i=0;i<16;i++){
+      data.appendChild(arr2[i]);
+    }
   }
+  function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
   return (
     <div className="pokemonGrid">
       <div id='1' onClick={()=>{handle(1)}}>
